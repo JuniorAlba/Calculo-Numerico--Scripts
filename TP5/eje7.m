@@ -1,3 +1,5 @@
+
+%GRAFICO 1
 x1_pe = [0 2 6];
 t1_pe = [0 1 2];
 x1_se = [6 3 0];
@@ -54,10 +56,9 @@ hold off;
 
 
 %GRAFICO 3
-%{ Por lo que vi en el video, si utilizo spline cubico sujeto (como creo que deberia ser) entonces mi grafica
-no se asemeja para nada a la del profesor, en cambio, si utilizo spline cubico natural, la grafica se asemeja a la
-del profesor. Por lo tanto decidi dejar el spline cubico natural hasta cerrar esa duda.
- %}
+% Por lo que vi en el video, si utilizo spline cubico sujeto (como creo que deberia ser) entonces mi grafica
+% no se asemeja para nada a la del profesor, en cambio, si utilizo spline cubico natural, la grafica se asemeja a la
+% del profesor. Por lo tanto decidi dejar el spline cubico natural hasta cerrar esa duda.
 x3_pe = [0 2 6];
 y3_pe = [0 4 6];
 x3_se = [0 3 6];
