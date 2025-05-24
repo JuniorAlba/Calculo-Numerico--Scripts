@@ -4,7 +4,7 @@ if (nargin==2)
   [a,b,c,d] = cubic_spline_natural(x1,y1);
   dS= @(x) b(1)*(x==x1(1));
 elseif (nargin==4)
-  [a,b,c,d] = cubic_spline_clamped(x1,y1,df1,df2);
+  [a,b,c,d] = cubic_spline_clamped(x1,y1,df1,df2)
 
   dS= @(x) df1*(x==x1(1));
 else

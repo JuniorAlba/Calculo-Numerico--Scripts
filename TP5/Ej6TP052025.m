@@ -1,5 +1,5 @@
 % Ejercicio 6  - Ej6TP052025.m
-
+clear all; clc; clf;
 x1 = [ 1 2 3]';
 y1 = [ 0 4 22/3]';
 
@@ -18,5 +18,5 @@ title('Ejercicio 6- Spline Cubica Sujeta')
 grid on; grid minor
 hold off
 disp('La Spline Cubica Sujeta será:')
-disp(S);
+disp(S)
 
