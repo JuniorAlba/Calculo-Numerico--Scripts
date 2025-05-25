@@ -3,7 +3,7 @@
 x1_pe = [0 2 6];
 t1_pe = [0 1 2];
 x1_se = [6 3 0];
-t1_se = [2 3 5];
+t1_se = [2 3 4];
 [a b c d] = cubic_spline_clamped(t1_pe,x1_pe,0,0);
 
 S1_pe = @(t) a(1).*(t==t1_pe(1));
@@ -56,28 +56,13 @@ hold off;
 
 
 %GRAFICO 3
-% Por lo que vi en el video, si utilizo spline cubico sujeto (como creo que deberia ser) entonces mi grafica
+%Por lo que vi en el video, si utilizo spline cubico sujeto (como creo que deberia ser) entonces mi grafica
 % no se asemeja para nada a la del profesor, en cambio, si utilizo spline cubico natural, la grafica se asemeja a la
 % del profesor. Por lo tanto decidi dejar el spline cubico natural hasta cerrar esa duda.
-x3_pe = [0 2 6];
-y3_pe = [0 4 6];
-x3_se = [0 3 6];
-y3_se = [0 2 6];
-[a b c d] = cubic_spline_natural(x3_pe,y3_pe);
-
-S3_pe = @(x) a(1).*(x==x3_pe(1));
-for i = 1:length(x3_pe)-1
-    S3_pe = @(x) S3_pe(x) + polyval([d(i) c(i) b(i) a(i)], (x-x3_pe(i))).*(x>x3_pe(i) & x<=x3_pe(i+1));
-end
-
-[a b c d] = cubic_spline_natural(x3_se,y3_se);
-S3_se = @(x) a(1).*(x==x3_se(1));
-for i = 1:length(x3_se)-1
-    S3_se = @(x) S3_se(x) + polyval([d(i) c(i) b(i) a(i)], (x-x3_se(i))).*(x>x3_se(i) & x<=x3_se(i+1));
-end
 figure(3);
 hold on;
 xx3 = linspace(0, 6, 200);
-plot(xx3, S3_pe(xx3), 'r-', 'LineWidth', 2);
-plot(xx3, S3_se(xx3), 'b-', 'LineWidth', 2);
-hold off;
+
+plot(S1_pe(tt1_pe),S2_pe(tt1_pe),'g-','LineWidth',2);
+plot(S1_se(tt1_se),S2_se(tt1_se),'g-','LineWidth',2);
+grid on;
