@@ -6,6 +6,7 @@ y = [432 599 1012 1909 2977 4190 5961];
 Pa = polyfit(x,y,6);
 Pb = polyfit(x,y,1);
 Pc = polyfit(x,y,2);
+n=length(x);
 EabsA = norm(y - polyval(Pa,x),2)^2
 EabsB = norm(y - polyval(Pb,x),2)^2
 EabsC = norm(y - polyval(Pc,x),2)^2
@@ -15,6 +16,7 @@ EabsC = norm(y - polyval(Pc,x),2)^2
 xx = linspace(0,6,100);
 figure(1);
 hold on;
+
 plot(xx,polyval(Pa,xx),'r-');
 plot(xx,polyval(Pb,xx),'g-');
 plot(xx,polyval(Pc,xx),'b-');
